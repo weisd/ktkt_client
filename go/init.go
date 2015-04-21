@@ -4,6 +4,11 @@ import (
 	"fmt"
 	"github.com/hprose/hprose-go/hprose"
 	"gopkg.in/ini.v1"
+	"os"
+	"os/exec"
+	"path"
+	"path/filepath"
+	"strings"
 )
 
 type Wherer struct {
@@ -26,7 +31,7 @@ func init() {
 		panic(err)
 	}
 	customPath := path.Join(workDir, "custom/conf/rpc.ini")
-	cfg, err = ini.Load(customPath)
+	cfg, err := ini.Load(customPath)
 	if err != nil {
 		panic(err)
 	}
