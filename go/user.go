@@ -44,7 +44,7 @@ type UserService struct {
 
 var UserClient *UserService
 
-func IsTokenType(t TokenType) {
+func IsTokenType(t TokenType) bool {
 	switch t {
 	case TOKEN_TYPE_KINGTRADER:
 		return true
