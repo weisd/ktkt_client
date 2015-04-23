@@ -43,3 +43,18 @@ type UserService struct {
 }
 
 var UserClient *UserService
+
+func IsTokenType(t TokenType) {
+	switch t {
+	case TOKEN_TYPE_KINGTRADER:
+		return true
+	case TOKEN_TYPE_KTKT:
+		return true
+	case TOKEN_TYPE_LIANGTOU:
+		return true
+	case TOKEN_TYPE_MOBILE:
+		return true
+	default:
+		return false
+	}
+}
