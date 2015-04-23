@@ -10,13 +10,36 @@ type Strategy struct {
 	Title     string
 	Keywords  string
 	Type      int
-	DeletedAt time.Time
+	DeletedAt time.Time `xorm:"deleted"`
 	CreatedAt time.Time `xorm:"created"`
 	UpdatedAt time.Time `xorm:"created"`
 }
 
 type StrategyService struct {
+
+	// 取角色列表 带缓存
 	StrategyGetListCache func(where Wherer, limit Limiter, sort Sorter) ([]Strategy, error)
+
+	// 取角色列表
+	StrategyGetList func(where Wherer, limit Limiter, sort Sorter) ([]Strategy, error)
+
+	// 取角色信息
+	StrategyGetOneCache func(where Wherer) (*Strategy, error)
+
+	// 取角色信息
+	StrategyGetOne func(where Wherer) (*Strategy, error)
+
+	// 创建角色信息
+	StrategyCreate func(kt_roles *Strategy) (int64, error)
+
+	// 删除角色 单条
+	StrategyDelete func(where Wherer) (int64, error)
+
+	// 更新数据
+	StrategyUpdate func(id int64, updater map[string]interface{}) (int64, error)
+
+	// 消除缓存
+	StrategyFlushCache func() error
 }
 
 var StrategyClient *StrategyService

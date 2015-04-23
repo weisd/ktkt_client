@@ -43,8 +43,16 @@ func init() {
 	// c := hprose.NewClient("tcp://127.0.0.1:3456/")
 	c := hprose.NewClient(server)
 	c.UseService(&UserClient)
+	c.UseService(&StrategyClient)
 	c.UseService(&StrategyStockClient)
 	c.UseService(&StrategyUserClient)
+
+	c.UseService(&KtRolesClient)
+	c.UseService(&KtPermissionsClient)
+	c.UseService(&KtRoleUserClient)
+	c.UseService(&KtRolePermissionClient)
+
+	c.UseService(&RbacClient)
 }
 
 func WorkDir() (string, error) {
