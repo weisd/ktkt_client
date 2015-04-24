@@ -8,7 +8,7 @@ import (
 type KtRoles struct {
 	Id       int64  `json:"id"`
 	Title    string `json:"title"`
-	Keywords string `json:keywords`
+	Keywords string `json:"keywords"`
 
 	DeletedAt time.Time `xorm:"deleted json:"_"`
 	CreatedAt time.Time `xorm:"created" json:"_"`
