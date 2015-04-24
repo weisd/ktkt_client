@@ -16,8 +16,8 @@ type StrategyStock struct {
 	Date       string    `json:date`
 	Up         int       `json:_`
 	Down       int       `json:_`
-	CreatedAt  time.Time `xorm:"created" json:_`
-	UpdatedAt  time.Time `xorm:"created" json:_`
+	CreatedAt  time.Time `xorm:"created"`
+	UpdatedAt  time.Time `xorm:"created"`
 }
 
 type StrategyStockService struct {
