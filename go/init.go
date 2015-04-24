@@ -8,6 +8,7 @@ import (
 	"os/exec"
 	"path"
 	"path/filepath"
+	"reflect"
 	"strings"
 )
 
@@ -39,6 +40,8 @@ func init() {
 	server := cfg.Section("").Key("server").MustString("http://127.0.0.1:3000/")
 
 	fmt.Println("连接rpc服务器 :", server)
+
+	hprose.ClassManager.Register(reflect.TypeOf(models.StrategyStock{}), "StrategyStock", "json")
 
 	// c := hprose.NewClient("tcp://127.0.0.1:3456/")
 	c := hprose.NewClient(server)
