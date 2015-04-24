@@ -5,19 +5,19 @@ import (
 )
 
 type StrategyStock struct {
-	Id         int64     `json:id`
-	StrategyId int64     `json:strategy_id`
-	Stkname    string    `json:stkname`
-	Stkcode    string    `json:stkcode`
-	CodeNo     string    `json:code_no`
-	Fmlprice   string    `json:fmlprice`
-	Fmltime    string    `json:fmltime`
-	Fmlname    string    `json:fmlname`
-	Date       string    `json:date`
-	Up         int       `json:_`
-	Down       int       `json:_`
-	CreatedAt  time.Time `xorm:"created"`
-	UpdatedAt  time.Time `xorm:"created"`
+	Id         int64     `json:"id"`
+	StrategyId int64     `json:"strategy_id"`
+	Stkname    string    `json:"stkname"`
+	Stkcode    string    `json:"stkcode"`
+	CodeNo     string    `json:"code_no"`
+	Fmlprice   string    `json:"fmlprice"`
+	Fmltime    string    `json:"fmltime"`
+	Fmlname    string    `json:"fmlname"`
+	Date       string    `json:"date"`
+	Up         int       `json:"-"`
+	Down       int       `json:"-"`
+	CreatedAt  time.Time `xorm:"created" json:"-"`
+	UpdatedAt  time.Time `xorm:"created" json:"-"`
 }
 
 type StrategyStockService struct {
