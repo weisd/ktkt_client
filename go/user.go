@@ -15,19 +15,19 @@ const (
 
 type User struct {
 	// base
-	Id       int64
-	NickName string
-	UserName string
-	Email    string
-	Phone    string
-	Avatar   string
-	Hash     string
-	Password string
-	Status   string
+	Id       int64  `json:"id"`
+	NickName string `json:"nick_name"`
+	UserName string `json:"user_name"`
+	Email    string `json:email`
+	Phone    string `json:"phone"`
+	Avatar   string `json:"avatar"`
+	Hash     string `json:"_"`
+	Password string `json:"_"`
+	Status   string `json:status"`
 
 	// hexun
-	HexunId          int64
-	HexunUserName    string
+	HexunId          int64     `json:hexun_id"`
+	HexunUserName    string    `json:"hexun_user_name"`
 	Hexun2026Endtime time.Time `json:hexun_2026_endtime`
 	Hexun2027Endtime time.Time `json:hexun_2027_endtime`
 

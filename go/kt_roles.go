@@ -6,13 +6,13 @@ import (
 
 // 角色表
 type KtRoles struct {
-	Id       int64
-	Title    string
-	Keywords string
+	Id       int64  `json:"id"`
+	Title    string `json:"title"`
+	Keywords string `json:keywords`
 
-	DeletedAt time.Time
-	CreatedAt time.Time
-	UpdatedAt time.Time
+	DeletedAt time.Time `xorm:"deleted json:"_"`
+	CreatedAt time.Time `xorm:"created" json:"_"`
+	UpdatedAt time.Time `xorm:"updated" json:"_"`
 }
 
 type KtRolesService struct {

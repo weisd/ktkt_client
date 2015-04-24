@@ -5,14 +5,14 @@ import (
 )
 
 type Strategy struct {
-	Id        int64
-	Oid       string
-	Title     string
-	Keywords  string
-	Type      int
-	DeletedAt time.Time `xorm:"deleted"`
-	CreatedAt time.Time `xorm:"created"`
-	UpdatedAt time.Time `xorm:"created"`
+	Id        int64     `json:"id"`
+	Oid       string    `json:"oid"`
+	Title     string    `json:"title"`
+	Keywords  string    `json:"keywords"`
+	Type      int       `json:"type"`
+	DeletedAt time.Time `xorm:"deleted" json:"_"`
+	CreatedAt time.Time `xorm:"created" json:"_"`
+	UpdatedAt time.Time `xorm:"updated" json:"_"`
 }
 
 type StrategyService struct {

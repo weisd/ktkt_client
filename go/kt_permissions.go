@@ -14,15 +14,15 @@ const (
 
 // 角色表
 type KtPermissions struct {
-	Id       int64
-	Title    string
-	Keywords string
-	NodeType NodeType
-	NodeId   int64
+	Id       int64    `json:"id"`
+	Title    string   `json:"title"`
+	Keywords string   `json:"keywords"`
+	NodeType NodeType `json:"node_type"`
+	NodeId   int64    `json:"node_id"`
 
-	DeletedAt time.Time `xorm:"deleted"`
-	CreatedAt time.Time `xorm:"created"`
-	UpdatedAt time.Time `xorm:"updated"`
+	DeletedAt time.Time `xorm:"deleted" json:"_"`
+	CreatedAt time.Time `xorm:"created" json:"_"`
+	UpdatedAt time.Time `xorm:"updated" json:"_"`
 }
 
 type KtPermissionsService struct {
