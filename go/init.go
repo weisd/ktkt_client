@@ -41,7 +41,12 @@ func init() {
 
 	fmt.Println("连接rpc服务器 :", server)
 
+	hprose.ClassManager.Register(reflect.TypeOf(User{}), "User", "json")
+	hprose.ClassManager.Register(reflect.TypeOf(Strategy{}), "Strategy", "json")
 	hprose.ClassManager.Register(reflect.TypeOf(StrategyStock{}), "StrategyStock", "json")
+
+	hprose.ClassManager.Register(reflect.TypeOf(KtRoles{}), "KtRoles", "json")
+	hprose.ClassManager.Register(reflect.TypeOf(KtPermissions{}), "KtPermissions", "json")
 
 	// c := hprose.NewClient("tcp://127.0.0.1:3456/")
 	c := hprose.NewClient(server)
