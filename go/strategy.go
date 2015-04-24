@@ -10,9 +10,9 @@ type Strategy struct {
 	Title     string    `json:"title"`
 	Keywords  string    `json:"keywords"`
 	Type      int       `json:"type"`
-	DeletedAt time.Time `xorm:"deleted" json:"_"`
-	CreatedAt time.Time `xorm:"created" json:"_"`
-	UpdatedAt time.Time `xorm:"updated" json:"_"`
+	DeletedAt time.Time `xorm:"deleted" json:"-"`
+	CreatedAt time.Time `xorm:"created" json:"-"`
+	UpdatedAt time.Time `xorm:"updated" json:"-"`
 }
 
 type StrategyService struct {

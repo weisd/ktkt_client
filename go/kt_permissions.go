@@ -20,9 +20,9 @@ type KtPermissions struct {
 	NodeType NodeType `json:"node_type"`
 	NodeId   int64    `json:"node_id"`
 
-	DeletedAt time.Time `xorm:"deleted" json:"_"`
-	CreatedAt time.Time `xorm:"created" json:"_"`
-	UpdatedAt time.Time `xorm:"updated" json:"_"`
+	DeletedAt time.Time `xorm:"deleted" json:"-"`
+	CreatedAt time.Time `xorm:"created" json:"-"`
+	UpdatedAt time.Time `xorm:"updated" json:"-"`
 }
 
 type KtPermissionsService struct {
