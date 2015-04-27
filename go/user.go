@@ -21,8 +21,8 @@ type User struct {
 	Email    string `json:email`
 	Phone    string `json:"phone"`
 	Avatar   string `json:"avatar"`
-	Hash     string `json:"_"`
-	Password string `json:"_"`
+	Hash     string `json:"-"`
+	Password string `json:"-"`
 	Status   string `json:status"`
 
 	// hexun
