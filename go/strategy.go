@@ -40,6 +40,9 @@ type StrategyService struct {
 
 	// 消除缓存
 	StrategyFlushCache func() error
+
+	// 通过title取策略
+	StrategyGetByTitle func(title string) (*Strategy, error)
 }
 
 var StrategyClient *StrategyService
