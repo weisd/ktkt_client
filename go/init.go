@@ -26,7 +26,7 @@ type Sorter struct {
 	OrderBy string
 }
 
-func initClient(server string) {
+func InitClient(server string) {
 	// workDir, err := WorkDir()
 	// if err != nil {
 	// 	panic(err)
