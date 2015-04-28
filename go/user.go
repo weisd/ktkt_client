@@ -40,6 +40,7 @@ type UserService struct {
 	UserGetUidByToken  func(token string, origin TokenType) (int64, error)
 	UserGetInfoById    func(uid int64) (*User, error)
 	UserGetInfoByToken func(token string, origin TokenType) (*User, error)
+	UserGetTokenByUid  func(uid int64, origin TokenType) (string, error)
 }
 
 var UserClient *UserService
