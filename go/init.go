@@ -3,13 +3,13 @@ package client
 import (
 	"fmt"
 	"github.com/hprose/hprose-go/hprose"
-	"gopkg.in/ini.v1"
-	"os"
-	"os/exec"
-	"path"
-	"path/filepath"
+	// "gopkg.in/ini.v1"
+	// "os"
+	// "os/exec"
+	// "path"
+	// "path/filepath"
 	"reflect"
-	"strings"
+	// "strings"
 )
 
 type Wherer struct {
@@ -26,18 +26,18 @@ type Sorter struct {
 	OrderBy string
 }
 
-func init() {
-	workDir, err := WorkDir()
-	if err != nil {
-		panic(err)
-	}
-	customPath := path.Join(workDir, "custom/conf/rpc.ini")
-	cfg, err := ini.Load(customPath)
-	if err != nil {
-		panic(err)
-	}
+func initClient(server string) {
+	// workDir, err := WorkDir()
+	// if err != nil {
+	// 	panic(err)
+	// }
+	// customPath := path.Join(workDir, "custom/conf/rpc.ini")
+	// cfg, err := ini.Load(customPath)
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	server := cfg.Section("").Key("server").MustString("http://127.0.0.1:3000/")
+	// server := cfg.Section("").Key("server").MustString("http://127.0.0.1:3000/")
 
 	fmt.Println("连接rpc服务器 :", server)
 
@@ -63,19 +63,19 @@ func init() {
 	c.UseService(&RbacClient)
 }
 
-func WorkDir() (string, error) {
-	execPath, err := ExecPath()
-	return path.Dir(strings.Replace(execPath, "\\", "/", -1)), err
-}
+// func WorkDir() (string, error) {
+// 	execPath, err := ExecPath()
+// 	return path.Dir(strings.Replace(execPath, "\\", "/", -1)), err
+// }
 
-func ExecPath() (string, error) {
-	file, err := exec.LookPath(os.Args[0])
-	if err != nil {
-		return "", err
-	}
-	p, err := filepath.Abs(file)
-	if err != nil {
-		return "", err
-	}
-	return p, nil
-}
+// func ExecPath() (string, error) {
+// 	file, err := exec.LookPath(os.Args[0])
+// 	if err != nil {
+// 		return "", err
+// 	}
+// 	p, err := filepath.Abs(file)
+// 	if err != nil {
+// 		return "", err
+// 	}
+// 	return p, nil
+// }
