@@ -4,6 +4,13 @@ import (
 	"time"
 )
 
+type StrategyType int
+
+const (
+	STRATEGY_TYPE_STRONG StrategyType = 1
+	STRATEGY_TYPE_WEAK   StrategyType = 2
+)
+
 type Strategy struct {
 	Id        int64     `json:"id"`
 	Oid       string    `json:"oid"`
