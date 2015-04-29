@@ -63,6 +63,8 @@ func InitClient(server string) {
 	c.UseService(&KtRolePermissionClient)
 
 	c.UseService(&RbacClient)
+
+	c.UseService(&MystockClient)
 }
 
 // func WorkDir() (string, error) {
