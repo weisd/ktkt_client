@@ -14,10 +14,10 @@ type StrategyStock struct {
 	Fmltime    string    `json:"fmltime"`
 	Fmlname    string    `json:"fmlname"`
 	Date       string    `json:"date"`
-	Up         int       `json:"-"`
-	Down       int       `json:"-"`
-	CreatedAt  time.Time `xorm:"created" json:"-"`
-	UpdatedAt  time.Time `xorm:"created" json:"-"`
+	Up         int       `json:"up"`
+	Down       int       `json:"down"`
+	CreatedAt  time.Time `xorm:"created" json:"createdAt"`
+	UpdatedAt  time.Time `xorm:"created" json:"updatedAt"`
 }
 
 type StrategyStockService struct {
