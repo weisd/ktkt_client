@@ -10,7 +10,7 @@ type Mystock struct {
 	CodeNo string `json:"code_no"`
 	Code   string `json:"code"`
 
-	DeletedAt time.Time `json:"_"`
+	DeletedAt time.Time `json:"-"`
 	CreatedAt time.Time `json:"createdAt"`
 	UpdatedAt time.Time `json:"updatedAt"`
 }
