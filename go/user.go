@@ -41,6 +41,20 @@ type UserService struct {
 	UserGetInfoById    func(uid int64) (*User, error)
 	UserGetInfoByToken func(token string, origin TokenType) (*User, error)
 	UserGetTokenByUid  func(uid int64, origin TokenType) (string, error)
+
+	// 通过用户名查
+	UserGetInfoByName func(name string) (*User, error)
+
+	// 通过手机查用户
+	UserGetInfoByPhone func(phone string) (*User, error)
+	// 通过email查用户
+	UserGetInfoByEmail func(email string) (*User, error)
+
+	// 验证用户密码
+	UserCheckPassword func(uid int64, pass string) (bool, error)
+
+	// 加密
+	UserHashPassword func(pass, hash string) string
 }
 
 var UserClient *UserService

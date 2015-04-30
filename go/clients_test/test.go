@@ -7,10 +7,45 @@ import (
 )
 
 func main() {
+	client.InitClient("http://127.0.0.1:3030")
+
 	// 创建
 	// TestKtRole()
 	// TestKtPermission()
-	TestRbac()
+	// TestRbac()
+	TestUser()
+}
+
+func TestUser() {
+	// user, err := client.UserClient.UserGetInfoByPhone("")
+	// if err != nil {
+	// 	panic(err)
+	// }
+
+	// fmt.Println(user)
+
+	// user, err := client.UserClient.UserGetInfoByName("dada")
+	// if err != nil {
+	// 	panic(err)
+	// }
+
+	// fmt.Println(user)
+
+	// ok, err := client.UserClient.UserCheckPassword(user.Id, "")
+	// if err != nil {
+	// 	panic(err)
+	// }
+
+	// //"ICYPH2I5s2BlKFUij+JGBaI7EyVwcklV"
+
+	// fmt.Println("ok ? ", ok)
+
+	// user, err = client.UserClient.UserGetInfoByEmail("")
+	// if err != nil {
+	// 	panic(err)
+	// }
+
+	// fmt.Println(user)
 }
 
 func TestRbac() {
