@@ -65,6 +65,8 @@ func InitClient(server string) {
 	c.UseService(&RbacClient)
 
 	c.UseService(&MystockClient)
+
+	c.UseService(&StockClient)
 }
 
 // func WorkDir() (string, error) {
