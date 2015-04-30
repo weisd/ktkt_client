@@ -80,6 +80,11 @@ var CodeKeys = []string{
 type StockService struct {
 	// 取股票信息
 	GetInfoByCode func(code string) (*Stock, error)
+	// 取股票名称
+	GetName func(code string) (string, error)
+
+	// 取股票字段值
+	GetField func(code, field string) (string, error)
 }
 
 var StockClient *StockService
