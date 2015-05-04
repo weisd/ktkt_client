@@ -56,7 +56,11 @@ type UserService struct {
 	// 加密
 	UserHashPassword func(pass, hash string) string
 
+	// 验证用户账号
 	UserAuth func(user, pass string) (*User, error)
+
+	// 更新用户token
+	UserTokenUpdate func(uid int64, origin string) (string, error)
 }
 
 var UserClient *UserService
