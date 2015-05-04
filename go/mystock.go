@@ -9,6 +9,7 @@ type Mystock struct {
 	Uid    int64  `json:"uid"`
 	CodeNo string `json:"code_no"`
 	Code   string `json:"code"`
+	Type   int64  `json:"type"`
 
 	DeletedAt time.Time `json:"-"`
 	CreatedAt time.Time `json:"createdAt"`
