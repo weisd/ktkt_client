@@ -23,13 +23,13 @@ type User struct {
 	Avatar   string `json:"avatar"`
 	Hash     string `json:"-"`
 	Password string `json:"-"`
-	Status   string `json:status"`
+	Status   string `json:"status"`
 
 	// hexun
-	HexunId          int64     `json:hexun_id"`
+	HexunId          int64     `json:"hexun_id"`
 	HexunUserName    string    `json:"hexun_user_name"`
-	Hexun2026Endtime time.Time `json:hexun_2026_endtime`
-	Hexun2027Endtime time.Time `json:hexun_2027_endtime`
+	Hexun2026Endtime time.Time `json:"hexun_2026_endtime"`
+	Hexun2027Endtime time.Time `json:"hexun_2027_endtime"`
 
 	// kingstrader
 	SingleScreenQuoteExpired time.Time `json:single_screen_quote_expired`
