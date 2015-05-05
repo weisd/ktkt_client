@@ -1,9 +1,9 @@
 package client
 
 type MystockGroup struct {
-	Id    int64
-	Uid   int64
-	Title string
+	Id    int64  `json:"id"`
+	Uid   int64  `json:"uid"`
+	Title string `json:"title"`
 }
 
 type MystockGroupService struct {
