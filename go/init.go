@@ -49,7 +49,7 @@ func InitClient(server string) {
 	hprose.ClassManager.Register(reflect.TypeOf(KtPermissions{}), "KtPermissions", "json")
 
 	hprose.ClassManager.Register(reflect.TypeOf(Mystock{}), "Mystock", "json")
-	hprose.ClassManager.Register(reflect.TypeOf(MystockType{}), "MystockType", "json")
+	hprose.ClassManager.Register(reflect.TypeOf(MystockGroup{}), "MystockGroup", "json")
 
 	// c := hprose.NewClient("tcp://127.0.0.1:3456/")
 	c := hprose.NewClient(server)
@@ -66,7 +66,7 @@ func InitClient(server string) {
 	c.UseService(&RbacClient)
 
 	c.UseService(&MystockClient)
-	c.UseService(&MystockTypeClient)
+	c.UseService(&MystockGroupClient)
 
 	c.UseService(&StockClient)
 }
