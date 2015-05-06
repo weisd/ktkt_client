@@ -12,14 +12,14 @@ const (
 )
 
 type Strategy struct {
-	Id        int64     `json:"id"`
-	Oid       int64     `json:"oid"`
-	Title     string    `json:"title"`
-	Keywords  string    `json:"keywords"`
-	Type      int       `json:"type"`
-	DeletedAt time.Time `xorm:"deleted" json:"-"`
-	CreatedAt time.Time `xorm:"created" json:"createdAt"`
-	UpdatedAt time.Time `xorm:"updated" json:"updatedAt"`
+	Id        int64        `json:"id"`
+	Oid       int64        `json:"oid"`
+	Title     string       `json:"title"`
+	Keywords  string       `json:"keywords"`
+	Type      StrategyType `json:"type"`
+	DeletedAt time.Time    `xorm:"deleted" json:"-"`
+	CreatedAt time.Time    `xorm:"created" json:"createdAt"`
+	UpdatedAt time.Time    `xorm:"updated" json:"updatedAt"`
 }
 
 type StrategyService struct {
