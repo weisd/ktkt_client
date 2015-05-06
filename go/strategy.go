@@ -13,7 +13,7 @@ const (
 
 type Strategy struct {
 	Id        int64     `json:"id"`
-	Oid       string    `json:"oid"`
+	Oid       int64     `json:"oid"`
 	Title     string    `json:"title"`
 	Keywords  string    `json:"keywords"`
 	Type      int       `json:"type"`
