@@ -31,6 +31,9 @@ type MystockGroupService struct {
 
 	// 消除缓存
 	MystockGroupFlushCache func() error
+
+	// 取信息
+	MystockGroupGet func(id int64) (*MystockGroup, error)
 }
 
 var MystockGroupClient *MystockGroupService

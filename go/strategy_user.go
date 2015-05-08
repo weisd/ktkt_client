@@ -40,6 +40,9 @@ type StrategyUserService struct {
 
 	// 消除缓存
 	StrategyUserFlushCache func() error
+
+	// 取角色信息
+	StrategyUserGet func(id int64) (*StrategyUser, error)
 }
 
 var StrategyUserClient *StrategyUserService

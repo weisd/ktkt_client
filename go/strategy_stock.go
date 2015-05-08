@@ -45,6 +45,9 @@ type StrategyStockService struct {
 
 	// 消除缓存
 	StrategyStockFlushCache func() error
+
+	// 取信息
+	StrategyStockGet func(id int64) (*StrategyStock, error)
 }
 
 var StrategyStockClient *StrategyStockService

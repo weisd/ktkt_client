@@ -9,6 +9,15 @@ import (
 func main() {
 	client.InitClient("http://127.0.0.1:3030")
 
+	f := client.Wherer{}
+	f.Where = "id = ?"
+	f.Args = []interface{}{90}
+	res, err := client.StrategyClient.StrategyGetOneCache(f)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(res)
 	// 创建
 	// TestKtRole()
 	// TestKtPermission()

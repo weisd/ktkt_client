@@ -50,6 +50,9 @@ type StrategyService struct {
 
 	// 通过title取策略
 	StrategyGetByTitle func(title string) (*Strategy, error)
+
+	// 取信息
+	StrategyGet func(id int64) (*Strategy, error)
 }
 
 var StrategyClient *StrategyService
