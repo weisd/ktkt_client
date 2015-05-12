@@ -48,6 +48,9 @@ type MystockService struct {
 
 	// 删除分组下的自选
 	MystockDeleteByGroupId func(id int64) (int64, error)
+
+	// 如果不存在创建
+	MystockCreateIfNotExists func(find Wherer, createData *Mystock) (int64, error)
 }
 
 var MystockClient *MystockService

@@ -32,6 +32,9 @@ type KtRolePermissionService struct {
 
 	// 消除缓存
 	KtRolePermissionFlushCache func() error
+
+	// 如果不存在创建
+	KtRolePermissionCreateIfNotExists func(find Wherer, createData *KtRolePermission) (int64, error)
 }
 
 var KtRolePermissionClient *KtRolePermissionService

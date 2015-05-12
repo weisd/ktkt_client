@@ -43,6 +43,9 @@ type StrategyUserService struct {
 
 	// 取角色信息
 	StrategyUserGet func(id int64) (*StrategyUser, error)
+
+	// 如果不存在创建
+	StrategyUserCreateIfNotExists func(find Wherer, createData *StrategyUser) (int64, error)
 }
 
 var StrategyUserClient *StrategyUserService

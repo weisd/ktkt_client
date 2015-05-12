@@ -32,6 +32,9 @@ type KtRoleUserService struct {
 
 	// 消除缓存
 	KtRoleUserFlushCache func() error
+
+	// 如果不存在创建
+	KtRoleUserCreateIfNotExists func(find Wherer, createData *KtRoleUser) (int64, error)
 }
 
 var KtRoleUserClient *KtRoleUserService

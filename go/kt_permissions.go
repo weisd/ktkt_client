@@ -53,6 +53,9 @@ type KtPermissionsService struct {
 
 	// 消除缓存
 	KtPermissionsFlushCache func() error
+
+	// 如果不存在创建
+	KtPermissionsCreateIfNotExists func(find Wherer, createData *KtPermissions) (int64, error)
 }
 
 var KtPermissionsClient *KtPermissionsService

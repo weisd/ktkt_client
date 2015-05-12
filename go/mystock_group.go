@@ -34,6 +34,9 @@ type MystockGroupService struct {
 
 	// 取信息
 	MystockGroupGet func(id int64) (*MystockGroup, error)
+
+	// 如果不存在创建
+	MystockGroupCreateIfNotExists func(find Wherer, createData *MystockGroup) (int64, error)
 }
 
 var MystockGroupClient *MystockGroupService

@@ -46,6 +46,9 @@ type KtRolesService struct {
 
 	// 通过keywords查找
 	KtRolesGetByKeywords func(keywords string) (*KtRoles, error)
+
+	// 如果不存在创建
+	KtRolesCreateIfNotExists func(find Wherer, createData *KtRoles) (int64, error)
 }
 
 var KtRolesClient *KtRolesService
