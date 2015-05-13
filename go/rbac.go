@@ -30,13 +30,13 @@ type RbacService struct {
 	GetRolesByNodeId func(nodeId int64, nodeType NodeType) ([]*KtRoles, error)
 
 	// 权限节点对应的所有角色
-	GetRoleIdsByNodeId func(nodeId int64, nodeType NodeType) ([]int64, error)
+	GetRoleIdsByNodeId func(nodeId int64, nodeType NodeType) ([]string, error)
 
 	// 用户对应的所有权限id
 	GetUserPermissionIds func(uid int64) ([]int64, error)
 
 	// 用户对应的所有权限节点id
-	GetUserNodeIds func(uid int64, nodeType NodeType) ([]int64, error)
+	GetUserNodeIds func(uid int64, nodeType NodeType) ([]string, error)
 
 	// 用户是否于角色
 	HasRoles func(uid int64, keywords string) (bool, error)

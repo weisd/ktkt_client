@@ -18,7 +18,7 @@ type KtPermissions struct {
 	Title    string   `json:"title"`
 	Keywords string   `json:"keywords"`
 	NodeType NodeType `json:"node_type"`
-	NodeId   int64    `json:"node_id"`
+	NodeId   string   `json:"node_id"`
 
 	DeletedAt time.Time `xorm:"deleted" json:"-"`
 	CreatedAt time.Time `xorm:"created" json:"createdAt"`

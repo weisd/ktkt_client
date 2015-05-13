@@ -6,7 +6,7 @@ import (
 
 type StrategyStock struct {
 	Id         int64     `json:"id"`
-	StrategyId int64     `json:"strategy_id"`
+	StrategyId string    `json:"strategy_id"`
 	Stkname    string    `json:"stkname"`
 	Stkcode    string    `json:"stkcode"`
 	CodeNo     string    `json:"code_no"`
