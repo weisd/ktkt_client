@@ -9,7 +9,7 @@ type RbacService struct {
 	GetRolePermissionIds func(roldId int64) ([]int64, error)
 
 	// 角色下的所有节点
-	GetRoleNodeIds func(roldId int64, noteType NodeType) ([]int64, error)
+	GetRoleNodeIds func(roldId int64, noteType NodeType) ([]string, error)
 
 	// 取用户对应的角色ids
 	GetUserRoleIds func(uid int64) ([]int64, error)
@@ -24,13 +24,13 @@ type RbacService struct {
 	GetPermissionRoles func(permissionId int64) ([]*KtRoles, error)
 
 	// 通过nodetype取permission
-	GetPermissionByNodeId func(nodeId int64, nodeType NodeType) (*KtPermissions, error)
+	GetPermissionByNodeId func(nodeId string, nodeType NodeType) (*KtPermissions, error)
 
 	// 权限节点对应的所有角色
-	GetRolesByNodeId func(nodeId int64, nodeType NodeType) ([]*KtRoles, error)
+	GetRolesByNodeId func(nodeId string, nodeType NodeType) ([]*KtRoles, error)
 
 	// 权限节点对应的所有角色
-	GetRoleIdsByNodeId func(nodeId int64, nodeType NodeType) ([]string, error)
+	GetRoleIdsByNodeId func(nodeId string, nodeType NodeType) ([]string, error)
 
 	// 用户对应的所有权限id
 	GetUserPermissionIds func(uid int64) ([]int64, error)
@@ -42,7 +42,7 @@ type RbacService struct {
 	HasRoles func(uid int64, keywords string) (bool, error)
 
 	// 用户是否有node权限
-	HasNode func(uid, nodeId int64, nodeType NodeType) (bool, error)
+	HasNode func(uid int64, nodeId string, nodeType NodeType) (bool, error)
 }
 
 var RbacClient *RbacService
