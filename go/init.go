@@ -70,7 +70,7 @@ func InitClient(server string) {
 
 	c.UseService(&StockClient)
 
-	c.AddFilter(LogFilter{})
+	// c.AddFilter(LogFilter{})
 }
 
 // func WorkDir() (string, error) {
