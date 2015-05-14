@@ -69,6 +69,8 @@ func InitClient(server string) {
 	c.UseService(&MystockGroupClient)
 
 	c.UseService(&StockClient)
+
+	c.AddFilter(LogFilter{})
 }
 
 // func WorkDir() (string, error) {
