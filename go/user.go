@@ -32,8 +32,8 @@ type User struct {
 	Hexun2027Endtime time.Time `json:"hexun_2027_endtime"`
 
 	// kingstrader
-	SingleScreenQuoteExpired time.Time `json:single_screen_quote_expired`
-	MultiScreenQuoteExpired  time.Time `json:multi_screen_quote_expired`
+	SingleScreenQuoteExpired time.Time `json:"single_screen_quote_expired"`
+	MultiScreenQuoteExpired  time.Time `json:"multi_screen_quote_expired"`
 }
 
 type UserService struct {
