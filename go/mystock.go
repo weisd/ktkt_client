@@ -51,6 +51,9 @@ type MystockService struct {
 
 	// 如果不存在创建
 	MystockCreateIfNotExists func(find Wherer, createData *Mystock) (int64, error)
+
+	// 批量创建
+	MystockMultiCreate func(codes []*Mystock) []int64
 }
 
 var MystockClient *MystockService
