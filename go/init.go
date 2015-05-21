@@ -70,6 +70,8 @@ func InitClient(server string) {
 
 	c.UseService(&StockClient)
 
+	c.UseService(&ClientStubClient)
+
 	// c.AddFilter(LogFilter{})
 }
 
