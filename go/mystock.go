@@ -46,6 +46,9 @@ type MystockService struct {
 	// 取信息
 	MystockGet func(id int64) (*Mystock, error)
 
+	// 删除用户所有自选股
+	MystockDeleteByUid func(uid int64) (int64, error)
+
 	// 删除分组下的自选
 	MystockDeleteByGroupId func(id int64) (int64, error)
 
