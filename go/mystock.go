@@ -59,6 +59,12 @@ type MystockService struct {
 
 	// 批量创建
 	MystockMultiCreate func(codes []*Mystock) []int64
+
+	// total
+	MystockCount func(w Wherer) (int64, error)
+
+	// 多删除
+	MystockMultiDeleteByUid func(uid int64, mystocks []*Mystock) (int64, error)
 }
 
 var MystockClient *MystockService
