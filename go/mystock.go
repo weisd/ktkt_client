@@ -65,6 +65,8 @@ type MystockService struct {
 
 	// 多删除
 	MystockMultiDeleteByUid func(uid int64, mystocks []*Mystock) (int64, error)
+
+	MystockGroupListWithStatByUid func(uid int64, code string) ([]map[string]interface{}, error)
 }
 
 var MystockClient *MystockService
