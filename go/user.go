@@ -13,6 +13,8 @@ const (
 	TOKEN_TYPE_MOBILE     TokenType = "mobile"
 )
 
+var ErrNotSuportLoginType = errors.New("请使用手机或邮箱账号登陆")
+
 type User struct {
 	// base
 	Id       int64  `json:"id"`
