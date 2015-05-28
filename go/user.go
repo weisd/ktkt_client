@@ -14,7 +14,7 @@ const (
 	TOKEN_TYPE_MOBILE     TokenType = "mobile"
 )
 
-var ErrNotSuportLoginType = errors.New("您输入的账号有误，请用手机号或者邮箱登陆")
+var ErrNotSuportLoginType = errors.New("ErrNotSuportLoginType")
 
 type User struct {
 	// base
