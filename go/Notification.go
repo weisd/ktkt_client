@@ -7,9 +7,9 @@ import (
 type NotificationCategory int
 
 const (
-	MOTIFICATION_CATE_UNKNOWN NotificationCategory = iota
-	MOTIFICATION_SYSTEM
-	MOTIFICATION_LIVE
+	NOTIFICATION_CATE_UNKNOWN NotificationCategory = iota
+	NOTIFICATION_SYSTEM
+	NOTIFICATION_LIVE
 )
 
 type Notification struct {
