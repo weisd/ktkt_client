@@ -13,15 +13,16 @@ const (
 )
 
 type Notification struct {
-	Id         int64
-	CategoryId NotificationCategory
-	Content    string
+	Id         int64                `json:"id"`
+	CategoryId NotificationCategory `json:"category_id"`
+	Content    string               `json:"content"`
 
-	Resource string
-	ResId    string
+	Resource string `json:"resource"`
+	ResId    string `json:"res_id"`
 
-	CreatedAt time.Time `xorm:"created"`
-	UpdatedAt time.Time `xorm:"updated"`
+	CreatedAt time.Time `xorm:"created" json:"created_at"`
+	UpdatedAt time.Time `xorm:"updated"  json:"updated_at`
+	DeletedAt time.Time `xorm:"deleted" json:"deleted_at`
 }
 
 type NotificationService struct {
