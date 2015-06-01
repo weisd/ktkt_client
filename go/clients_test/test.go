@@ -9,20 +9,67 @@ import (
 func main() {
 	client.InitClient("http://127.0.0.1:3030")
 
-	f := client.Wherer{}
-	f.Where = "id = ?"
-	f.Args = []interface{}{90}
-	res, err := client.StrategyClient.StrategyGetOneCache(f)
-	if err != nil {
-		panic(err)
-	}
+	// f := client.Wherer{}
+	// f.Where = "id = ?"
+	// f.Args = []interface{}{90}
+	// res, err := client.StrategyClient.StrategyGetOneCache(f)
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	fmt.Println(res)
+	TestNotification()
+
+	// fmt.Println(res)
 	// 创建
 	// TestKtRole()
 	// TestKtPermission()
 	// TestRbac()
-	TestUser()
+	// TestUser()
+}
+
+func TestNotification() {
+	fmt.Println("TestNotification")
+
+	n := new(client.Notification)
+	n.CategoryId = client.MOTIFICATION_LIVE
+	n.Content = "测试消息"
+	n.Resource = "test"
+	n.ResId = 1
+	// m := client.Notification(n)
+	// if {
+	// 	fmt.Println("err")
+	// 	return
+	// }
+
+	aft, err := client.NotificationClient.NotificationAdd(n)
+	fmt.Println(aft, err)
+
+	// fmt.Println(n)
+	// // return
+
+	// insertId, err := client.NotificationClient.NotificationCreate(n)
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
+
+	// fmt.Println("insertId", insertId)
+
+	// res, err := client.NotificationClient.NotificationGetOne(client.Wherer{Where: "id = ?", Args: []interface{}{insertId}})
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
+
+	// fmt.Println("res", res)
+
+	// list, err := client.NotificationClient.NotificationGetList(client.Wherer{}, client.Limiter{}, client.Sorter{})
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
+
+	// fmt.Println("list", list)
 }
 
 func TestUser() {
@@ -71,12 +118,12 @@ func TestRbac() {
 	//
 
 	// ok, err := client.RbacClient.HasRoles(1, "feng")
-	ok, err := client.RbacClient.HasNode(1, 2001, 1)
-	if err != nil {
-		panic(err)
-	}
+	// ok, err := client.RbacClient.HasNode(1, 2001, 1)
+	// if err != nil {
+	// 	panic(err)
+	// }
 
-	fmt.Println(ok)
+	// fmt.Println(ok)
 }
 
 func TestKtPermission() {
