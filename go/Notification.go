@@ -18,7 +18,7 @@ type Notification struct {
 	Content    string
 
 	Resource string
-	ResId    int64
+	ResId    string
 
 	CreatedAt time.Time `xorm:"created"`
 	UpdatedAt time.Time `xorm:"updated"`

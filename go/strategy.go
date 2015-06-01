@@ -56,6 +56,8 @@ type StrategyService struct {
 
 	// 如果不存在创建
 	StrategyCreateIfNotExists func(find Wherer, createData *Strategy) (int64, error)
+
+	StrategyGetByOid func(oid int64) (*Strategy, error)
 }
 
 var StrategyClient *StrategyService
