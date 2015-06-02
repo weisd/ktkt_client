@@ -50,6 +50,9 @@ type NotifyInboxService struct {
 	NotifyInboxGetListByUid func(uid int64, limit Limiter, sort Sorter) ([]*Notification, error)
 
 	NotifyInboxCountByUid func(uid int64) (int64, error)
+
+	NotifyInboxGetUnRead    func(uid int64) (map[string]int64, error)
+	NotifyInboxUpdateUnRead func(uid int64) error
 }
 
 var NotifyInboxClient *NotifyInboxService
