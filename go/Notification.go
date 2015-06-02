@@ -16,12 +16,16 @@ type Notification struct {
 	Id         int64                `json:"id"`
 	CategoryId NotificationCategory `json:"category_id"`
 	Content    string               `json:"content"`
+	Platforms  string               `json:"platforms"`
 
 	Resource string `json:"resource"`
 	ResId    string `json:"res_id"`
 
+	SendType string `json:"-"`
+	SendTime string `json:"-"`
+
 	CreatedAt time.Time `xorm:"created" json:"created_at"`
-	UpdatedAt time.Time `xorm:"updated" json:"updated_at"`
+	UpdatedAt time.Time `xorm:"updated"  json:"updated_at"`
 	DeletedAt time.Time `xorm:"deleted" json:"deleted_at"`
 }
 
