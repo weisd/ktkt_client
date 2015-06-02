@@ -21,8 +21,8 @@ type Notification struct {
 	Resource string `json:"resource"`
 	ResId    string `json:"res_id"`
 
-	SendType string `json:"-"`
-	SendTime string `json:"-"`
+	SendType string    `json:"-"`
+	SendTime time.Time `json:"-"`
 
 	CreatedAt time.Time `xorm:"created" json:"created_at"`
 	UpdatedAt time.Time `xorm:"updated"  json:"updated_at"`
@@ -63,6 +63,8 @@ type NotificationService struct {
 
 	// 添加新消息
 	NotificationAdd func(info *Notification) (int64, error)
+
+	NotificationCategoryCheck func(des string) NotificationCategory
 }
 
 var NotificationClient *NotificationService
