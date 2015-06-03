@@ -62,6 +62,9 @@ type NotifyInboxService struct {
 	NotifyInboxGetUnRead func(uid int64) (map[string]int64, error)
 
 	NotifyInboxUpdateUnRead func(uid int64) error
+
+	NotifyInboxMultiRead   func(uid int64, ids []int64) int64
+	NotifyInboxMultiDelete func(uid int64, ids []int64) int64
 }
 
 var NotifyInboxClient *NotifyInboxService
