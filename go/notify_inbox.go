@@ -6,13 +6,18 @@ import (
 
 type NotifyInbox struct {
 	Id         int64
-	Uid        int64
+	Uid        int64 `xorm:"index"`
 	Mid        int64
 	CategoryId NotificationCategory
-	Readed     bool `xorm:"default 0"`
+	Content    string
+
+	Resource string
+	ResId    string
+
+	Readed bool `xorm:"default 0"`
 
 	CreatedAt time.Time `xorm:"created"`
-	UpdatedAt time.Time `xorm:""`
+	UpdatedAt time.Time `xorm:"updated"`
 }
 
 type NotifyInboxService struct {
