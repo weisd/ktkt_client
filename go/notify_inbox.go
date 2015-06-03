@@ -5,19 +5,19 @@ import (
 )
 
 type NotifyInbox struct {
-	Id         int64
-	Uid        int64 `xorm:"index"`
-	Mid        int64
-	CategoryId NotificationCategory
-	Content    string
+	Id         int64                `json:"id"`
+	Uid        int64                `xorm:"index" json:"uid"`
+	Mid        int64                `json:"mid"`
+	CategoryId NotificationCategory `json:"category_id"`
+	Content    string               `json:"content"`
 
-	Resource string
-	ResId    string
+	Resource string `json:"resource"`
+	ResId    string `json:"res_id"`
 
-	Readed bool `xorm:"default 0"`
+	Readed bool `xorm:"default 0" json:"readed"`
 
-	CreatedAt time.Time `xorm:"created"`
-	UpdatedAt time.Time `xorm:"updated"`
+	CreatedAt time.Time `xorm:"created" json:"created_at"`
+	UpdatedAt time.Time `xorm:"updated"  json:"updated_at"`
 }
 
 type NotifyInboxService struct {
