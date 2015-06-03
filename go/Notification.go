@@ -8,13 +8,15 @@ type NotificationCategory int
 
 const (
 	NOTIFICATION_CATE_UNKNOWN NotificationCategory = iota
-	NOTIFICATION_SYSTEM
-	NOTIFICATION_LIVE
+	NOTIFICATION_CATE_SYSTEM
+	NOTIFICATION_CATE_LIVE
+	NOTIFICATION_CATE_QUAN
 )
 
 type Notification struct {
 	Id         int64                `json:"id"`
 	CategoryId NotificationCategory `json:"category_id"`
+	Title      string               `json:"title"`
 	Content    string               `json:"content"`
 	Platforms  string               `json:"platforms"`
 

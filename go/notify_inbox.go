@@ -9,6 +9,7 @@ type NotifyInbox struct {
 	Uid        int64                `xorm:"index" json:"uid"`
 	Mid        int64                `json:"mid"`
 	CategoryId NotificationCategory `json:"category_id"`
+	Title      string               `json:"title"`
 	Content    string               `json:"content"`
 
 	Resource string `json:"resource"`
@@ -54,9 +55,12 @@ type NotifyInboxService struct {
 
 	NotifyInboxGetListByUid func(uid int64, limit Limiter, sort Sorter) ([]NotifyInbox, error)
 
+	NotifyInboxGetListByUidAnCate func(uid int64, category NotificationCategory, limit Limiter, sort Sorter) ([]NotifyInbox, error)
+
 	NotifyInboxCountByUid func(uid int64) (int64, error)
 
-	NotifyInboxGetUnRead    func(uid int64) (map[string]int64, error)
+	NotifyInboxGetUnRead func(uid int64) (map[string]int64, error)
+
 	NotifyInboxUpdateUnRead func(uid int64) error
 }
 
