@@ -52,7 +52,7 @@ type NotifyInboxService struct {
 	// 如果不存在创建
 	NotifyInboxCreateIfNotExists func(find Wherer, createData *NotifyInbox) (int64, error)
 
-	NotifyInboxGetListByUid func(uid int64, limit Limiter, sort Sorter) ([]*Notification, error)
+	NotifyInboxGetListByUid func(uid int64, limit Limiter, sort Sorter) ([]NotifyInbox, error)
 
 	NotifyInboxCountByUid func(uid int64) (int64, error)
 
