@@ -21,4 +21,11 @@ func TestClient(t *testing.T) {
 
 	t.Log(comment)
 
+	thread, err := KtktQuanThreadClient.QuanGetThreadInfoById(1)
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	t.Log(thread)
+
 }

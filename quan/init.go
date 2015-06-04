@@ -34,11 +34,13 @@ func InitClient(server string) {
 
 	hprose.ClassManager.Register(reflect.TypeOf(Orders{}), "Orders", "json")
 	hprose.ClassManager.Register(reflect.TypeOf(KtktQuanComment{}), "KtktQuanComment", "json")
+	hprose.ClassManager.Register(reflect.TypeOf(KtktQuanThread{}), "KtktQuanThread", "json")
 
 	// c := hprose.NewClient("tcp://127.0.0.1:3456/")
 	c := hprose.NewClient(server)
 	c.UseService(&OrdersClient)
 	c.UseService(&KtktQuanCommentClient)
+	c.UseService(&KtktQuanThreadClient)
 
 	// c.AddFilter(LogFilter{})
 }
