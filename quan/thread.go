@@ -12,7 +12,7 @@ type KtktQuanThread struct {
 	Title   string `json:"title"`
 	Content string `json:"content"`
 
-	Author       string    `json:"author"`
+	Author       int64     `json:"author"`
 	Status       int       `json:"status"`
 	DelStatus    int       `json:"del_status"`
 	View         int64     `json:"view"`
