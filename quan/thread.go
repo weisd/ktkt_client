@@ -32,7 +32,8 @@ type KtktQuanThread struct {
 }
 
 type KtktQuanThreadService struct {
-	QuanGetThreadInfoById func(id int64) (*KtktQuanThread, error)
+	QuanGetThreadInfoById  func(id int64) (*KtktQuanThread, error)
+	QuanGetThreadInfoByTid func(id string) (*KtktQuanThread, error)
 }
 
 var KtktQuanThreadClient *KtktQuanThreadService

@@ -28,4 +28,11 @@ func TestClient(t *testing.T) {
 
 	t.Log(thread)
 
+	threadt, err := KtktQuanThreadClient.QuanGetThreadInfoByTid("1965756602")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	t.Log(threadt)
+
 }
