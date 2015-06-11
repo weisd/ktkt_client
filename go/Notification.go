@@ -23,8 +23,8 @@ type Notification struct {
 	Resource string `json:"resource"`
 	ResId    string `json:"res_id"`
 
-	SendType string    `json:"-"`
-	SendTime time.Time `json:"-"`
+	SendType string    `json:"send_type"`
+	SendTime time.Time `json:"send_time"`
 
 	CreatedAt time.Time `xorm:"created" json:"created_at"`
 	UpdatedAt time.Time `xorm:"updated"  json:"updated_at"`
