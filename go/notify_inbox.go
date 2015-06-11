@@ -15,6 +15,9 @@ type NotifyInbox struct {
 	Resource string `json:"resource"`
 	ResId    string `json:"res_id"`
 
+	ResourceEx string `json:"resource_ex"`
+	ResIdEx    string `json:"res_id_ex"`
+
 	Readed bool `xorm:"default 0" json:"readed"`
 
 	CreatedAt time.Time `xorm:"created" json:"created_at"`

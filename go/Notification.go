@@ -23,6 +23,9 @@ type Notification struct {
 	Resource string `json:"resource"`
 	ResId    string `json:"res_id"`
 
+	ResourceEx string `json:"resource_ex"`
+	ResIdEx    string `json:"res_id_ex"`
+
 	SendType string    `json:"send_type"`
 	SendTime time.Time `json:"send_time"`
 
