@@ -16,6 +16,7 @@ type Strategy struct {
 	Oid       string       `json:"oid"`
 	Title     string       `json:"title"`
 	Keywords  string       `json:"keywords"`
+	Cover     string       `json:"cover"`
 	Type      StrategyType `json:"type"`
 	DeletedAt time.Time    `xorm:"deleted" json:"-"`
 	CreatedAt time.Time    `xorm:"created" json:"createdAt"`
