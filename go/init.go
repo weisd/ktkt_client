@@ -54,6 +54,8 @@ func InitClient(server string) {
 	hprose.ClassManager.Register(reflect.TypeOf(Notification{}), "Notification", "json")
 	hprose.ClassManager.Register(reflect.TypeOf(NotifyInbox{}), "NotifyInbox", "json")
 
+	hprose.ClassManager.Register(reflect.TypeOf(Clients{}), "Clients", "json")
+
 	// c := hprose.NewClient("tcp://127.0.0.1:3456/")
 	c := hprose.NewClient(server)
 	c.UseService(&UserClient)
@@ -77,6 +79,8 @@ func InitClient(server string) {
 
 	c.UseService(&NotificationClient)
 	c.UseService(&NotifyInboxClient)
+
+	c.UseService(&ClientsClient)
 
 	// c.AddFilter(LogFilter{})
 }
