@@ -32,11 +32,11 @@ type Stock struct {
 	HQSSL5  string
 	HQSJW5  string
 	HQSYL1  string
-	Code    string
-	Date    string
-	Time    string
-	Delete  string
-	AddTime string
+	Code    string `json:"code"`
+	Date    string `json:"date"`
+	Time    string `json:"time"`
+	Delete  string `json:"delete"`
+	AddTime string `json:"add_time"`
 }
 
 var CodeKeys = []string{
