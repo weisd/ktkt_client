@@ -7,6 +7,8 @@ import (
 type StrategyInfo struct {
 	Id            int64     `json:"id"`
 	StrategyId    string    `json:"strategy_id" xorm:"unique"`
+	Title         string    `json:"title"`
+	Category      string    `json:"category"`
 	StopProfit    string    `json:"stop_profit"`
 	StopLoss      string    `json:"stop_loss"`
 	PercentProfit string    `json:"percent_profit"`
