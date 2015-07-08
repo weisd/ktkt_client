@@ -15,7 +15,9 @@ type StrategyInfo struct {
 	DataType      string    `json:"data_type"`
 	TestPlatform  string    `json:"test_platform"`
 	TestTime      string    `json:"test_time"`
-	Intro         string    `json:"intro"`
+	Intro         string    `json:"intro" xorm:"TEXT"`
+	Hot           string    `json:"hot"`
+	Publisher     string    `json:"publisher"`
 	DeletedAt     time.Time `json:"deleted_at"`
 }
 
