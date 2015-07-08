@@ -55,6 +55,10 @@ type StrategyService struct {
 	// 取信息
 	StrategyGet func(id int64) (*Strategy, error)
 
+	StrategyTotal func() (int64, error)
+
+	StrategyCount func(w Wherer) (int64, error)
+
 	// 如果不存在创建
 	StrategyCreateIfNotExists func(find Wherer, createData *Strategy) (int64, error)
 
