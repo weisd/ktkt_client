@@ -43,6 +43,12 @@ type RbacService struct {
 
 	// 用户是否有node权限
 	HasNode func(uid int64, nodeId string, nodeType NodeType) (bool, error)
+
+	// 通过角色id取所有用户id
+	GetUserIdsByRoleId func(roleId int64) ([]int64, error)
+
+	// 通过节点id取所有用户id
+	GetUserIdsByNodeId func(nodeId string, nodeType NodeType) ([]int64, error)
 }
 
 var RbacClient *RbacService
