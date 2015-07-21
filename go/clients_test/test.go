@@ -17,7 +17,7 @@ func main() {
 	// 	panic(err)
 	// }
 
-	TestNotification()
+	// TestNotification()
 
 	// fmt.Println(res)
 	// 创建
@@ -25,24 +25,55 @@ func main() {
 	// TestKtPermission()
 	// TestRbac()
 	// TestUser()
+
+	TestStockSend()
+}
+
+func TestStockSend() {
+	// []string{"10000001530", "10000600430", "10000600730", "10000660830", "10000600130", "10000661130", "10011930330"}
+	sidAll, err := client.RbacClient.GetAllStrategyNodeIds()
+
+	fmt.Println(sidAll, err)
+	aft, err := client.RbacClient.DelStockSendUserByStrategyId("10000001530", 123456)
+	fmt.Println(aft, err)
+
+	for _, k := range sidAll {
+		// 开启发送功能的用户ids
+		uids := client.RbacClient.GetStockSendUidsByStrategyId(k)
+		fmt.Println(k, uids)
+	}
+
+	// // 删除发送功能
+
+	// // 删除发送功能
+	client.RbacClient.AddStockSendUserByStrategyId("10000001530", []int64{1113152238, 123456})
+	// // 关闭用户的所有
+	client.RbacClient.ClearStockSendByUid(123456)
+	// // 所有策略
+	for _, k := range sidAll {
+		// 开启发送功能的用户ids
+		uids := client.RbacClient.GetStockSendUidsByStrategyId(k)
+		fmt.Println(k, uids)
+	}
+
 }
 
 func TestNotification() {
 	fmt.Println("TestNotification")
 
-	n := new(client.Notification)
-	n.CategoryId = client.MOTIFICATION_LIVE
-	n.Content = "测试消息"
-	n.Resource = "test"
-	n.ResId = 1
-	// m := client.Notification(n)
-	// if {
-	// 	fmt.Println("err")
-	// 	return
-	// }
+	// n := new(client.Notification)
+	// n.CategoryId = client.MOTIFICATION_LIVE
+	// n.Content = "测试消息"
+	// n.Resource = "test"
+	// n.ResId = 1
+	// // m := client.Notification(n)
+	// // if {
+	// // 	fmt.Println("err")
+	// // 	return
+	// // }
 
-	aft, err := client.NotificationClient.NotificationAdd(n)
-	fmt.Println(aft, err)
+	// aft, err := client.NotificationClient.NotificationAdd(n)
+	// fmt.Println(aft, err)
 
 	// fmt.Println(n)
 	// // return

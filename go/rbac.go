@@ -49,6 +49,17 @@ type RbacService struct {
 
 	// 通过节点id取所有用户id
 	GetUserIdsByNodeId func(nodeId string, nodeType NodeType) ([]int64, error)
+
+	// 开启发送功能的用户ids
+	GetStockSendUidsByStrategyId func(strategyId string) []int64
+	// 删除发送功能
+	DelStockSendUserByStrategyId func(strategyId string, uid int64) (affected int64, err error)
+	// 删除发送功能
+	AddStockSendUserByStrategyId func(strategyId string, uids []int64) (affected int64, err error)
+	// 关闭用户的所有
+	ClearStockSendByUid func(uid int64)
+	// 所有策略
+	GetAllStrategyNodeIds func() ([]string, error)
 }
 
 var RbacClient *RbacService
