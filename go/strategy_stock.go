@@ -51,6 +51,9 @@ type StrategyStockService struct {
 
 	// 如果不存在创建
 	StrategyStockCreateIfNotExists func(find Wherer, createData *StrategyStock) (int64, error)
+
+	StrategyStockDayListByStrategyId      func(strategyId string, fdays ...int) ([]string, error)
+	StrategyStockDayListByStrategyIdCache func(strategyId string, fdays ...int) ([]string, error)
 }
 
 var StrategyStockClient *StrategyStockService
