@@ -86,6 +86,8 @@ func InitClient(server string) {
 
 	c.UseService(&StrategyInfoClient)
 
+	c.UseService(&FuturesClient)
+
 	// c.AddFilter(LogFilter{})
 }
 

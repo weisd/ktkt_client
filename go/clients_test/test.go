@@ -26,7 +26,13 @@ func main() {
 	// TestRbac()
 	// TestUser()
 
-	TestStockSend()
+	// TestStockSend()
+	TestFutures()
+}
+
+func TestFutures() {
+	res, err := client.FuturesClient.FuturesGetInfo("IF1508")
+	fmt.Println(res, err)
 }
 
 func TestStockSend() {
