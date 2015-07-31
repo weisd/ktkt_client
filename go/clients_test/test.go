@@ -31,8 +31,12 @@ func main() {
 }
 
 func TestFutures() {
-	res, err := client.FuturesClient.FuturesGetInfo("IF1508")
+	res, err := client.FuturesClient.FuturesInfoByCode("IF1508")
 	fmt.Println(res, err)
+
+	res, err = client.FuturesClient.FuturesInfoByCodeNFields("IF1508", []string{"Name"})
+	fmt.Println(res, err)
+
 }
 
 func TestStockSend() {
