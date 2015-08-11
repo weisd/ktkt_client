@@ -64,6 +64,8 @@ type UserService struct {
 
 	// 更新用户token
 	UserTokenUpdate func(uid int64, origin string) (string, error)
+
+	UserAvatar func(uid int64) string
 }
 
 var UserClient *UserService
