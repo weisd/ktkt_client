@@ -11,6 +11,7 @@ type Mystock struct {
 	Code    string `json:"code"`
 	GroupId int64  `json:"groupId"`
 	Group   string `json:"group"`
+	Sort    int64  `json:"sort" xorm:"default 0"`
 
 	DeletedAt time.Time `json:"-"`
 	CreatedAt time.Time `json:"createdAt"`
