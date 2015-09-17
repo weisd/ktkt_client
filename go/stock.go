@@ -86,6 +86,8 @@ type StockService struct {
 
 	// 取股票字段值
 	GetField func(code, field string) (string, error)
+
+	ToMap func() (info map[string]string)
 }
 
 var StockClient *StockService
