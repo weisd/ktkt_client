@@ -57,6 +57,7 @@ func InitClient(server string) {
 	hprose.ClassManager.Register(reflect.TypeOf(Clients{}), "Clients", "json")
 	hprose.ClassManager.Register(reflect.TypeOf(Stock{}), "Stock", "json")
 	hprose.ClassManager.Register(reflect.TypeOf(StrategyInfo{}), "StrategyInfo", "json")
+	hprose.ClassManager.Register(reflect.TypeOf(TFinance{}), "TFinance", "json")
 
 	// c := hprose.NewClient("tcp://127.0.0.1:3456/")
 	c := hprose.NewClient(server)
@@ -87,6 +88,7 @@ func InitClient(server string) {
 	c.UseService(&StrategyInfoClient)
 
 	c.UseService(&FuturesClient)
+	c.UseService(&TFinanceClient)
 
 	// c.AddFilter(LogFilter{})
 }

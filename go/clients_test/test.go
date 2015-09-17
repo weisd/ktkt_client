@@ -27,7 +27,28 @@ func main() {
 	// TestUser()
 
 	// TestStockSend()
-	TestFutures()
+	// TestTFinance()
+}
+
+func TestTFinance() {
+	finace, err := client.TFinanceClient.FinanceInfoByCodeCache("sh600600")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	list := make([]map[string]string, 0)
+
+	for k, v := range client.TFinanceShowNames {
+		info := map[string]string{}
+		info["title"] = v
+		info["field"] = k
+		info["value"] = finace[k]
+
+		list = append(list, info)
+	}
+
+	fmt.Println(list)
 }
 
 func TestFutures() {
