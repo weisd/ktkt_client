@@ -37,6 +37,7 @@ type Stock struct {
 	Time    string `json:"time"`
 	Delete  string `json:"delete"`
 	AddTime string `json:"add_time"`
+	Unix    string `json:"unix"`
 }
 
 var CodeKeys = []string{
@@ -86,8 +87,6 @@ type StockService struct {
 
 	// 取股票字段值
 	GetField func(code, field string) (string, error)
-
-	ToMap func() (info map[string]string)
 }
 
 var StockClient *StockService

@@ -63,6 +63,10 @@ type StrategyService struct {
 	StrategyCreateIfNotExists func(find Wherer, createData *Strategy) (int64, error)
 
 	StrategyGetByOid func(oid int64) (*Strategy, error)
+
+	StrategySwitchOn  func(strategyId, state string, uid int64) error
+	StrategyStateIsOn func(strategyId string, uid int64) (bool, error)
+	StrategyStates    func(strategyIds []string, uid int64) (res map[string]bool, err error)
 }
 
 var StrategyClient *StrategyService
