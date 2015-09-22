@@ -28,27 +28,36 @@ func main() {
 
 	// TestStockSend()
 	// TestTFinance()
+	//
+
+	// err := client.StrategyStockClient.StrategyStockResultZaddIds("10000661130", 8561)
+	// if err != nil {
+	// 	fmt.Println(err)
+
+	// }
+
+	// fmt.Println("ok")
 }
 
 func TestTFinance() {
-	finace, err := client.TFinanceClient.FinanceInfoByCodeCache("sh600600")
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
+	// finace, err := client.TFinanceClient.FinanceInfoByCodeCache("sh600600")
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
 
-	list := make([]map[string]string, 0)
+	// list := make([]map[string]string, 0)
 
-	for k, v := range client.TFinanceShowNames {
-		info := map[string]string{}
-		info["title"] = v
-		info["field"] = k
-		info["value"] = finace[k]
+	// for k, v := range client.TFinanceShowNames {
+	// 	info := map[string]string{}
+	// 	info["title"] = v
+	// 	info["field"] = k
+	// 	info["value"] = finace[k]
 
-		list = append(list, info)
-	}
+	// 	list = append(list, info)
+	// }
 
-	fmt.Println(list)
+	// fmt.Println(list)
 }
 
 func TestFutures() {

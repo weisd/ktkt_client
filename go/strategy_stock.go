@@ -54,6 +54,8 @@ type StrategyStockService struct {
 
 	StrategyStockDayListByStrategyId      func(strategyId string, fdays ...int) ([]string, error)
 	StrategyStockDayListByStrategyIdCache func(strategyId string, fdays ...int) ([]string, error)
+
+	StrategyStockResultZaddIds func(strategyId string, resultId int64, pipeNum ...int64) error
 }
 
 var StrategyStockClient *StrategyStockService
